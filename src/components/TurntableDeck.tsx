@@ -439,13 +439,13 @@ export const TurntableDeck: React.FC<TurntableDeckProps> = ({
 
       {/* COLUMN 3 (3 COLS): VERTICAL RECORD CRATE / SPINE DIGGER */}
       <div
-        className={`lg:col-span-3 rounded-2xl p-4 border flex flex-col justify-between ${
+        className={`lg:col-span-3 rounded-2xl p-4 border flex flex-col justify-start ${
           isDaylight
             ? 'te-card-light'
             : 'bg-[#161922] border-white/15 text-ivory-50 shadow-2xl'
         }`}
       >
-        <div className="flex items-center justify-between border-b border-current/10 pb-3 mb-3">
+        <div className="flex items-center justify-between border-b border-current/10 pb-2.5 mb-2.5 shrink-0">
           <div>
             <span className="font-mono text-[10px] uppercase tracking-widest text-[#ff4d1c] font-bold block">
               CRATE DIGGER // {filteredMilestones.length} DISCS
@@ -460,7 +460,7 @@ export const TurntableDeck: React.FC<TurntableDeckProps> = ({
         </div>
 
         {/* Scrollable Vertical Record Spines */}
-        <div className="space-y-1.5 max-h-[470px] overflow-y-auto pr-1">
+        <div className="space-y-1.5 flex-1 max-h-[540px] overflow-y-auto pr-1">
           {filteredMilestones.map((item, idx) => {
             const isSelected = idx === activeIndex;
             const isItemPlaying = playingId === item.id;

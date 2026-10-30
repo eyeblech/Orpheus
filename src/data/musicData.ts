@@ -25,6 +25,10 @@ export const MUSIC_MILESTONES: MusicMilestone[] = [
     seenTitles.add(normalizedTitle);
     return true;
   })
+  .map((work) => ({
+    ...work,
+    coverUrl: `/covers/${work.id}.jpg`,
+  }))
   .sort((a, b) => a.year - b.year);
 
 export {
